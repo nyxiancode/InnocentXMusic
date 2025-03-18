@@ -5,20 +5,20 @@ from bing_image_downloader import downloader
 from pyrogram import Client, filters
 from pyrogram.types import InputMediaPhoto, Message
 from BrandrdXMusic import app
-
+banned = ["mia khalifa", "hot porn", "sexy porn", "sext pic", "porn", "hot nudes" "hot nude", "nude", "nudes", "porn Images", "nudes pictures", "nude pictures", "nudes pic", "nude pic", "nudes pics", "nude pics", "hot girl images", "hot girls images"]
 @app.on_message(filters.command(["imgs", "image"], prefixes=["/", "!"]))
 async def google_img_search(client: Client, message: Message):
     chat_id = message.chat.id
 
     try:
-        query = message.text.split(None, 1)[1]
+        query = message.text.split(None, 1)[1].lower()
     except IndexError:
-        return await message.reply("Provide an image query to search!")
+        return await message.reply("𝑩𝒂𝒃𝒖𝒖 𝒃𝒂𝒕𝒂 𝒕𝒐 𝒅𝒐 𝒌𝒊𝒔 𝒕𝒐𝒑𝒊𝒄 𝒑𝒓 𝒑𝒊𝒄 𝒏𝒊𝒌𝒂𝒍𝒏𝒊 𝒉𝒂𝒊...😙")
 
     lim = findall(r"lim=\d+", query)
     try:
-        lim = int(lim[0].replace("lim=", ""))
-        query = query.replace(f"lim={lim}", "")
+        lim = int(lim[0].replace("lim=", "")).lower()
+        query = query.replace(f"lim={lim}", "").lower()
     except IndexError:
         lim = 5  # Default limit to 5 images
 
@@ -33,12 +33,12 @@ async def google_img_search(client: Client, message: Message):
     except Exception as e:
         return await message.reply(f"Error in downloading images: {e}")
 
-    msg = await message.reply("𝔹𝕣𝕒𝕟𝕕𝕖𝕕𝕏𝕄𝕒𝕟𝕒𝕘𝕖𝕞𝕖𝕟𝕥 Scrapping images...")
+    msg = await message.reply("𝑺𝒂𝒃𝒂𝒓 𝒌𝒂𝒓𝒐 𝒋𝒂𝒂𝒏 𝒃𝒉𝒆𝒋𝒕𝒂 𝒉𝒖 𝒑𝒉𝒐𝒕𝒖𝒖...👉👈")
 
     count = 0
     for img in lst:
         count += 1
-        await msg.edit(f"=> 𝔹𝕣𝕒𝕟𝕕𝕖𝕕𝕏𝕄𝕒𝕟𝕒𝕘𝕖𝕞𝕖𝕟𝕥 owo scrapped images {count}")
+        await msg.edit(f"=> 𝑱𝒂𝒂𝒏𝒖 𝒌𝒆 𝒍𝒊𝒚𝒆 𝒑𝒉𝒐𝒕𝒐 𝒍𝒊 𝒋𝒐... {count}")
 
     try:
         await app.send_media_group(
