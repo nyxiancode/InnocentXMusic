@@ -1,7 +1,7 @@
 ━━━━━━━━━━━━━━━━━━━━
 
 <h2 align="center">
-    ──「⛦🦋 𝗕𝗥𝗔𝗡𝗗𝗥𝗗 ✘ 𝗠𝗨𝗦𝗜𝗖 🦋⛦」──
+    ──「⛦🦋 𝐈𝐍𝐍𝐎𝐂𝐄𝐍𝐓 ✘ 𝗠𝗨𝗦𝗜𝗖 🦋⛦」──
 </h2>
 
 <p align="center">
@@ -29,7 +29,7 @@
 
 </p>
 
-**𝙏𝙀𝙎𝙏 𝘽𝙊𝙏 ➣ [˹INNOCENT ꭙ 𝐂ʀᴇᴡ ꭙ 𝐌ᴜꜱɪᴄ™ ˹ʙꜱ](https://t.me/CrewMusic_bot)**
+**𝙏𝙀𝙎𝙏 𝘽𝙊𝙏 ➣ [˹INNOCENT ꭙ 𝐌ᴜꜱɪᴄ™ ˹ʙꜱ](https://t.me/NAKSH_X_MUSICBOT)**
 
 
 
