@@ -6,6 +6,7 @@ from PIL import Image , ImageDraw
 from pyrogram import *
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.enums import *
+import config
 from config import OWNER_ID
 #BOT FILE NAME
 from BrandrdXMusic import app as app
