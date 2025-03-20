@@ -70,11 +70,11 @@ def circle(pfp, size=(500, 500)):
 
 
 def welcomepic(pic_path, user, chatname, user_id, uname):
-    background = Image.open("ANNIEMUSIC/assets/annie/AnnieNwel.png")
+    background = Image.open("BrandrdXMusic/assets/Brandrdwel2.png")
     pfp = Image.open(pic_path).convert("RGBA")
     pfp = circle(pfp, size=(835, 839))
     draw = ImageDraw.Draw(background)
-    font_large = ImageFont.truetype('ANNIEMUSIC/assets/annie/ArialReg.ttf', size=65)
+    font_large = ImageFont.truetype('BrandrdXMusic/assets/hiroko.ttf', size=65)
     draw.text((421, 715), f'{user}', fill=(242, 242, 242), font=font_large)
     draw.text((270, 1005), f'{user_id}', fill=(242, 242, 242), font=font_large)
     draw.text((570, 1308), f"{uname}", fill=(242, 242, 242), font=font_large)
@@ -87,7 +87,7 @@ def welcomepic(pic_path, user, chatname, user_id, uname):
 
 @app.on_message(filters.command("wel") & ~filters.private)
 async def auto_state(client, message):
-    usage = "**Usage:**\n⦿/wel [on|off]\n➤ANNIE SPECIAL WELCOME.........."
+    usage = "**Usage:**\n⦿/wel [on|off]\n➤NAKSH SPECIAL WELCOME.........."
     if len(message.command) != 2:
         return await message.reply_text(usage)
     
