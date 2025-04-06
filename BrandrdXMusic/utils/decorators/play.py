@@ -6,8 +6,9 @@ from pyrogram.errors import (
     InviteRequestSent,
     UserAlreadyParticipant,
     UserNotParticipant,
+    ChatWriteForbidden,
 )
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from BrandrdXMusic import YouTube, app
 from BrandrdXMusic.misc import SUDOERS
@@ -27,9 +28,39 @@ from strings import get_string
 links = {}
 clinks = {}
 
+MUST_JOIN = "abt_innocent"  # Ganti dengan channel kamu
+
+async def check_must_join(client, message: Message):
+    if not MUST_JOIN or message.from_user is None:
+        return True
+    try:
+        await client.get_chat_member(MUST_JOIN, message.from_user.id)
+        return True
+    except UserNotParticipant:
+        try:
+            if str(MUST_JOIN).startswith("-100"):
+                chat_info = await client.get_chat(MUST_JOIN)
+                link = chat_info.invite_link
+            else:
+                link = f"https://t.me/{MUST_JOIN}"
+
+            await message.reply_photo(
+                photo="https://files.catbox.moe/mim7yt.jpg",
+                caption=f"Kamu harus bergabung ke [AlteregoHub]({link}) sebelum menggunakan bot ini.",
+                reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton("Join AlteregoHub", url=link)]]
+                ),
+            )
+        except ChatWriteForbidden:
+            pass
+        return False
+
 
 def PlayWrapper(command):
     async def wrapper(client, message):
+        if not await check_must_join(client, message):
+            return
+
         language = await get_lang(message.chat.id)
         _ = get_string(language)
         if message.sender_chat:
@@ -198,6 +229,9 @@ def PlayWrapper(command):
 
 def CPlayWrapper(command):
     async def wrapper(client, message):
+        if not await check_must_join(client, message):
+            return
+
         i = await client.get_me()
         language = await get_lang(message.chat.id)
         _ = get_string(language)
